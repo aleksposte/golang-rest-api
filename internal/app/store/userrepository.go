@@ -21,11 +21,11 @@ func (r *UserRepository) FindByEmail(email string) (*model.User, error) {
 	u := &model.User{}
 	if err := r.store.db.QueryRow(
 		"SELECT id, email, encrypted_password FROM users WHERE email = $1",
-		email
-	).Scam(
+		email,
+	).Scan(
 		&u.ID, 
-		
-		&u.Email, &u.EncryptedPassword
+		&u.Email, 
+		&u.EncryptedPassword,
 	); err != nil {
 		return nil, err
 	}

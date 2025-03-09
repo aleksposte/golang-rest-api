@@ -22,7 +22,6 @@ func TestStore(t *testing.T, databaseURL string) (*Store, func(...string)) {
 				t.Fatal(err)
 			}
 		}
-
 		s.Close()
 	}
 }

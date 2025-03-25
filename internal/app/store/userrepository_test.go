@@ -17,6 +17,8 @@ func TestUserRepository_Create(t *testing.T) {
 	})
 	assert.NoError(t, err)
 	assert.NotNil(t, u)
+	assert.NoError(t, err)
+	assert.NotNil(t, u)
 
 	assert.NoError(t, err)
 	assert.NotNil(t, u)
